@@ -1,5 +1,5 @@
 /**************************************************
- * This is a test program ti mkake sure im using this corretly
+ * This is a test program to make sure I'm using this correctly
  ************************************************/
 
 #include <iostream>
