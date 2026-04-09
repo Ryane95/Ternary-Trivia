@@ -1,0 +1,36 @@
+Movies
+1	Who directed the movie Jaws?	Lucas	Spielberg	Cameron	Nolan	Spielberg
+1	Which movie features a talking donkey?	Shrek	Toy Story	Cars	Frozen	Shrek
+1	What movie has a sinking ship in 1912?	Titanic	Avatar	Jaws	Gladiator	Titanic
+1	Who plays Iron Man in the MCU?	Chris Evans	Robert Downey Jr	Tom Holland	Mark Ruffalo	Robert Downey Jr
+1	What movie features dinosaurs in a theme park?	Jurassic Park	King Kong	Godzilla	Avatar	Jurassic Park
+1	Which movie is about blue aliens on Pandora?	Avatar	Aliens	Star Wars	Interstellar	Avatar
+1	What movie has a wizard named Harry?	Harry Potter	Lord of the Rings	Narnia	Witcher	Harry Potter
+2	Who directed Titanic?	Cameron	Spielberg	Nolan	Scott	Cameron
+2	Which movie has the quote "I am your father"?	Star Wars	Matrix	Titanic	Avatar	Star Wars
+2	Who played Jack in Titanic?	Brad Pitt	Leonardo DiCaprio	Matt Damon	Tom Cruise	Leonardo DiCaprio
+2	What movie features the character Neo?	Matrix	Tron	Blade Runner	Avatar	Matrix
+2	What film series has Hobbits?	Lord of the Rings	Harry Potter	Narnia	Game of Thrones	Lord of the Rings
+2	Which movie has Woody and Buzz?	Toy Story	Finding Nemo	Cars	Frozen	Toy Story
+2	Which movie features a giant gorilla?	King Kong	Godzilla	Rampage	Jurassic Park	King Kong
+3	Who directed The Dark Knight?	Nolan	Cameron	Scott	Spielberg	Nolan
+3	Which movie stars Tom Hanks on a deserted island?	Cast Away	Forrest Gump	Terminal	Apollo 13	Cast Away
+3	What movie has the quote "Here's Johnny"?	The Shining	Psycho	It	Halloween	The Shining
+3	Who played Wolverine in X-Men films?	Hugh Jackman	Ryan Reynolds	Chris Hemsworth	Tom Hardy	Hugh Jackman
+3	What animated film features Elsa?	Frozen	Tangled	Moana	Encanto	Frozen
+3	What movie has the DeLorean time machine?	Back to the Future	Looper	Terminator	Matrix	Back to the Future
+3	Who directed Pulp Fiction?	Tarantino	Nolan	Fincher	Scott	Tarantino
+4	Who directed Gladiator?	Ridley Scott	Spielberg	Cameron	Nolan	Ridley Scott
+4	Which movie won Best Picture in 1994?	Forrest Gump	Pulp Fiction	Shawshank Redemption	Titanic	Forrest Gump
+4	Who played Joker in The Dark Knight?	Heath Ledger	Jared Leto	Joaquin Phoenix	Jack Nicholson	Heath Ledger
+4	Which movie features the planet Arrakis?	Dune	Star Wars	Avatar	Interstellar	Dune
+4	Who directed Avatar?	James Cameron	Nolan	Spielberg	Scott	James Cameron
+4	What movie features a park with cloned dinosaurs?	Jurassic Park	The Lost World	King Kong	Godzilla	Jurassic Park
+4	Which movie stars Keanu Reeves as an assassin?	John Wick	Matrix	Speed	Constantine	John Wick
+5	Who directed Schindler's List?	Spielberg	Nolan	Scott	Cameron	Spielberg
+5	What film features the character Travis Bickle?	Taxi Driver	Godfather	Scarface	Goodfellas	Taxi Driver
+5	Who directed Blade Runner?	Ridley Scott	Nolan	Cameron	Fincher	Ridley Scott
+5	What movie features HAL 9000?	2001 A Space Odyssey	Interstellar	Matrix	Alien	2001 A Space Odyssey
+5	Who directed The Grand Budapest Hotel?	Wes Anderson	Nolan	Fincher	Tarantino	Wes Anderson
+5	Which movie stars Joaquin Phoenix as Joker?	Joker	Batman	The Dark Knight	Suicide Squad	Joker
+5	Who directed Inception?	Christopher Nolan	Spielberg	Cameron	Scott	Christopher Nolan

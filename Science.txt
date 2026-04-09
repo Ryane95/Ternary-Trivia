@@ -1,0 +1,36 @@
+Science
+1	What planet do we live on?	Mars	Venus	Earth	Jupiter	Earth
+1	What gas do humans breathe in?	Oxygen	Carbon Dioxide	Nitrogen	Helium	Oxygen
+1	What part of the plant absorbs water?	Leaf	Stem	Root	Flower	Root
+1	What star is closest to Earth?	Sirius	Sun	Alpha Centauri	Vega	Sun
+1	What state of matter is air?	Solid	Liquid	Gas	Plasma	Gas
+1	How many legs does an insect have?	4	6	8	10	6
+1	What organ pumps blood?	Liver	Lung	Heart	Brain	Heart
+2	What planet is known as the Red Planet?	Mars	Venus	Mercury	Jupiter	Mars
+2	What gas do plants use in photosynthesis?	Oxygen	Carbon Dioxide	Nitrogen	Hydrogen	Carbon Dioxide
+2	What force pulls objects toward Earth?	Magnetism	Friction	Gravity	Electricity	Gravity
+2	How many bones are in the human body (adult)?	196	206	216	186	206
+2	What is H2O commonly called?	Salt	Oxygen	Water	Hydrogen	Water
+2	What organ controls the body?	Heart	Lungs	Brain	Liver	Brain
+2	What planet is largest?	Earth	Mars	Jupiter	Saturn	Jupiter
+3	What particle has a negative charge?	Proton	Neutron	Electron	Photon	Electron
+3	What is the center of an atom called?	Shell	Nucleus	Core	Ring	Nucleus
+3	What vitamin do we get from sunlight?	A	B	C	D	D
+3	What is the boiling point of water (C)?	90	100	110	120	100
+3	What galaxy is Earth in?	Andromeda	Milky Way	Triangulum	Orion	Milky Way
+3	What organ helps you breathe?	Heart	Lungs	Liver	Kidney	Lungs
+3	What does DNA stand for?	Deoxyribonucleic Acid	Dynamic Network Acid	Dual Nucleic Atom	Digital Nucleic Acid	Deoxyribonucleic Acid
+4	What planet has rings?	Earth	Mars	Saturn	Venus	Saturn
+4	What scientist proposed relativity?	Newton	Tesla	Einstein	Darwin	Einstein
+4	What unit measures force?	Joule	Watt	Newton	Volt	Newton
+4	What gas protects Earth from UV rays?	Ozone	Helium	Oxygen	Hydrogen	Ozone
+4	What blood cells fight infection?	Red	White	Platelets	Stem	White
+4	What type of energy is stored energy?	Kinetic	Potential	Solar	Thermal	Potential
+4	What organ filters blood?	Heart	Kidney	Lung	Liver	Kidney
+5	What is the speed of light (approx)?	300,000 km/s	150,000 km/s	1,000 km/s	3,000 km/s	300,000 km/s
+5	Who developed the laws of motion?	Einstein	Darwin	Newton	Tesla	Newton
+5	What particle has positive charge?	Electron	Proton	Neutron	Photon	Proton
+5	What planet is closest to the Sun?	Mercury	Venus	Earth	Mars	Mercury
+5	What organ produces insulin?	Liver	Pancreas	Heart	Kidney	Pancreas
+5	What is the chemical symbol for gold?	Ag	Au	Fe	Pb	Au
+5	What gas is most abundant in air?	Oxygen	Nitrogen	Carbon Dioxide	Argon	Nitrogen
