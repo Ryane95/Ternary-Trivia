@@ -1,0 +1,36 @@
+History
+1	Who was the first US president?	Lincoln	Washington	Jefferson	Adams	Washington
+1	In which country were the pyramids built?	Greece	Mexico	Egypt	India	Egypt
+1	What war was fought between North and South US states?	WWI	Civil War	Revolutionary War	Vietnam War	Civil War
+1	Who discovered America in 1492?	Columbus	Magellan	Cook	Vespucci	Columbus
+1	What wall divided Berlin?	China Wall	Berlin Wall	Hadrian Wall	Iron Wall	Berlin Wall
+1	Which empire built the Colosseum?	Greek	Roman	Persian	Mongol	Roman
+1	Who was known as the Maid of Orleans?	Joan of Arc	Cleopatra	Elizabeth I	Catherine	Joan of Arc
+2	Who was the US president during the Civil War?	Lincoln	Washington	Grant	Jefferson	Lincoln
+2	What year did WW2 end?	1943	1944	1945	1946	1945
+2	Who was the first man on the moon?	Aldrin	Gagarin	Armstrong	Collins	Armstrong
+2	What ship sank in 1912?	Britannic	Lusitania	Titanic	Olympic	Titanic
+2	What empire was ruled by Julius Caesar?	Greek	Roman	Persian	Mongol	Roman
+2	What country started WW2 by invading Poland?	Germany	Italy	Russia	Japan	Germany
+2	Who wrote the Declaration of Independence?	Jefferson	Adams	Franklin	Hamilton	Jefferson
+3	Who was the leader of Nazi Germany?	Hitler	Stalin	Mussolini	Franco	Hitler
+3	Who was the first emperor of Rome?	Augustus	Caesar	Nero	Tiberius	Augustus
+3	What year did WW1 begin?	1912	1914	1916	1918	1914
+3	What civilization built Machu Picchu?	Aztec	Maya	Inca	Olmec	Inca
+3	Who was queen of ancient Egypt?	Cleopatra	Nefertiti	Hatshepsut	All	Cleopatra
+3	What war was fought in Vietnam?	Cold War	Vietnam War	Korean War	Gulf War	Vietnam War
+3	Who was the Soviet leader in WW2?	Lenin	Stalin	Khrushchev	Gorbachev	Stalin
+4	Who was the British PM during WW2?	Churchill	Chamberlain	Attlee	Eden	Churchill
+4	Who discovered penicillin?	Fleming	Pasteur	Darwin	Hooke	Fleming
+4	What empire was Genghis Khan from?	Mongol	Roman	Persian	Ottoman	Mongol
+4	What year did the Berlin Wall fall?	1987	1989	1991	1993	1989
+4	What was the Cold War mainly between?	US vs USSR	China vs Japan	France vs Germany	UK vs Italy	US vs USSR
+4	Who led India to independence?	Gandhi	Nehru	Patel	Singh	Gandhi
+4	Who was the first female UK PM?	Thatcher	May	Truss	Cooper	Thatcher
+5	Who was the first emperor of China?	Qin Shi Huang	Han Gaozu	Kublai Khan	Taizong	Qin Shi Huang
+5	What treaty ended WW1?	Versailles	Paris	Geneva	Rome	Versailles
+5	Who led the Soviet Union during the Cuban Missile Crisis?	Khrushchev	Stalin	Brezhnev	Gorbachev	Khrushchev
+5	Who conquered most of Asia and Europe in the 1200s?	Genghis Khan	Attila	Caesar	Napoleon	Genghis Khan
+5	Who was French leader during the Napoleonic wars?	Napoleon	Louis XVI	Robespierre	Charles X	Napoleon
+5	What empire controlled Constantinople before 1453?	Byzantine	Roman	Persian	Ottoman	Byzantine
+5	Who wrote the Communist Manifesto?	Marx	Lenin	Stalin	Trotsky	Marx
