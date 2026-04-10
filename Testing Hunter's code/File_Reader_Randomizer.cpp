@@ -176,7 +176,7 @@ void readFile(string filename) // read in the file
             pauseGame();
         }
     }
-
+    
     file.close();
 }
 
