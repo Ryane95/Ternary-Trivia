@@ -129,10 +129,7 @@ do
 return 0;
 }
 
-void loadPoints(board Jepordy[5][5])
-{
-
-}
+//void loadPoints(board Jepordy[5][5]){}
 
 void shuffleTeams(team teams[])
 {
