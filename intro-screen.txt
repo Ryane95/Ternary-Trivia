@@ -53,7 +53,10 @@
 
 ===================================================================================
 |                                                                                  |
+|                              Category:                                           |
+|                                                                                  |
 |                           Question#: (### points)                                |
+|                                                                                  |
 |                                                                                  |
 |                 (space for question (include line wrapping in code?))            |
 |                                                                                  |

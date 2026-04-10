@@ -8,9 +8,7 @@ using namespace std;
 
 void printWrappedBox(const string &question, int width) {
   // width = number of characters inside the box (not counting borders)
-
   // Top border
-  cout << "+" << string(width, '-') << "+\n";
 
   int pos = 0;
   int n = question.size();
@@ -49,15 +47,12 @@ void printWrappedBox(const string &question, int width) {
       line += string(width - line.size(), ' ');
 
     // Print inside border
-    cout << "|" << line << "|\n";
+    cout << line << "\n";
 
     // Skip any extra spaces before next line
     while (pos < n && question[pos] == ' ')
       pos++;
   }
-
-  // Bottom border
-  cout << "+" << string(width, '-') << "+\n";
 }
 
 int main() {
@@ -65,5 +60,5 @@ int main() {
              "without using any extra libraries. I am sure adding any more "
              "characters to test the limits of this code is fine right ? Who "
              "knows how long the questions or answers will be in the game!";
-  printWrappedBox(q, 40);
+  printWrappedBox(q, 25);
 }
