@@ -56,11 +56,9 @@ int main()
 	int choice;
 	bool creative = false;
 
-<<<<<<< Updated upstream
-=======
 
 	screens::introScreen();
->>>>>>> Stashed changes
+
 		for (int i = 0; i < 3; i++)
 		{
 			cout << "Team " << i + 1 << " is called? ";
@@ -224,37 +222,24 @@ int answerQuestion(team teams[], board jepordy[5][5])
 	int row, col, teamChoice;
 	int turn = order(); 
 
-<<<<<<< Updated upstream
-	cout << "It is " << teams[turn].name << " turn: " << endl;
-	
-	cout << "Enter a row (0-4): ";
+
+	screens::aTeamsTurn(teams[turn].name);
+	screens::questionSelection("row");
 	row = validation();
 	while (row < 0 || row > 4)
-=======
-	screens::aTeamsTurn(teams[turn].name);
-
-	screens::questionSelection("row");
-	r = validation();
-	while (r < 0 || r > 4)
->>>>>>> Stashed changes
 	{
 		cout << "Invalid row. Enter a row (0-4): ";
 		row = validation();
 	}
-
-<<<<<<< Updated upstream
-	cout << "Enter a column (0-4): ";
+	screens::questionSelection("column");
 	col = validation();
 	while (col < 0 || col > 4)
-=======
-	screens::questionSelection("column");
-	c = validation();
-	while (c < 0 || c > 4)
->>>>>>> Stashed changes
+
 	{
 		cout << "Invalid column. Enter a column (0-4): ";
 		col = validation();
 	}
+
 
 	if (jepordy[row][col].used)
 	{
