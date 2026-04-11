@@ -39,8 +39,6 @@ int main()
     string request;
     bool creative = false;
 
-    cin.ignore(1000, '\n');
-
     for (int i = 0; i < 3; i++)
     {
         cout << "Team " << i + 1 << " is called? ";
