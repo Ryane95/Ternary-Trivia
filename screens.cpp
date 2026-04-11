@@ -5,11 +5,146 @@
  * Version: 1.0
  ***************************/
 #include "screens.h"
+#include "quizgame.h"
 #include <iomanip>
 #include <iostream>
 #include <string>
 using namespace std;
 
-void screens::introScreen() {}
+void printWrappedString(string beforeString, string& String, int width, string AfterString) {
+    int currentPosition = 0;
+    int size = String.size();
+
+    while (currentPosition < size) {
+        int lineStart = currentPosition;
+        int lineLen = 0;
+        while (lineLen < width && currentPosition <size) {
+            if (lineLen + 1 > width)
+                break;
+            if (currentPosition<size && String[currentPosition] == ' ') {
+                int nextWordLen = 0;
+                int temp = currentPosition + 1;
+                while (temp < size && String[temp] != ' ' && nextWordLen < width) {
+                    nextWordLen++;
+                    temp++;
+                }
+                if (lineLen + 1 + nextWordLen > width)
+                    break;
+            }
+            currentPosition++;
+            lineLen++;
+        }
+        string line = String.substr(lineStart, lineLen);
+        if (line.size() < (size_t)width)
+            line += string(width - line.size(), ' ');
+        cout << beforeString << line << AfterString<< "\n";
+        while (currentPosition <size && String[currentPosition] == ' ')
+            currentPosition++;
+    }
+}
+
+void screens::introScreen()
+{
+cout << "===================================================================================\n";
+cout << "|                                                                                  |\n";
+cout << "|                             Welcome to Jeopardy!                                 |\n";
+for (int counter =0; counter <5; counter++){
+    cout << "|                                                                                  |\n";
+}
+cout << "                            (Press Enter to continue)                             |\n";
+cout << "===================================================================================\n";
+pauseGame();
+}
 void screens::questionScreen(vector<vector<string>> questions, string category,
-                             int index) {}
+                             int index) {
+
+}
+void screens::menuScreen() {
+    cout << "===================================================================================\n";
+    cout << "|                                                                                  |\n";
+    cout << "|                             Ternary Trivia                                       |\n";
+    cout << "|                                                                                  |\n";
+    cout << "|                       What would you like to do?                                 |\n";
+    cout << "|                                                                                  |\n";
+    cout << "|                                                                                  |\n";
+    cout << "|               1.Answer a question                                                |\n";
+    cout << "|               2.Check current points                                             |\n";
+    cout << "|               3.Restart Game                                                     |\n";
+    cout << "|               4.Change current points                                            |\n";
+    cout << "|               5.Exit the program                                                 |\n";
+    for (int count = 0; count < 2; count++) {
+    cout << "|                                                                                  |\n";
+    }
+    cout << "|                                                                         _________|\n";
+    cout << "|                                                                         |         \n";
+    cout << "==========================================================================| :";
+}
+void screens::questionTable() {
+
+}
+void screens::aTeamsTurn(string teamName) {
+    cout << "===================================================================================\n";
+    for (int counter = 0; counter < 6; counter++) {
+        cout << "|                                                                                  |\n";
+    }
+    string announcement = "It is team: " + teamName + "'s turn...";
+    printWrappedString("|          ",announcement,33,"                                       |");
+    for (int counter = 0; counter < 3; counter++) {
+        cout << "|                                                                                  |\n";
+    }
+    cout << "|                                                                     ____________|\n";
+    cout << "|                                                                    |             \n";
+    cout << "=====================================================================| :(press enter)";
+    pauseGame();
+}
+void screens::questionSelection(string rowOrColumn) {
+    if (rowOrColumn == "row") {
+        cout << "====================================================================================\n";
+        cout << "|                                                                                  |\n";
+        cout << "|                  Choose your question(enter a row (1-4) )                        |\n";
+        cout << "|                                                                                  |\n";
+        cout << "|      _____________      _____________       _____________      ___________       |\n";
+        cout << "|     |             |    |             |     |             |    |           |      |\n";
+        cout << "|     | 1. 100      |    | 1. 100      |     | 1. 100      |    | 1. 100    |      |\n";
+        cout << "|     |_____________|    |_____________|     |_____________|    |___________|      |\n";
+        cout << "|      _____________      _____________       _____________      ___________       |\n";
+        cout << "|     |             |    |             |     |             |    |           |      |\n";
+        cout << "|     | 2. 200      |    | 2. 200      |     | 2. 200      |    | 2. 200    |      |\n";
+        cout << "|     |_____________|    |_____________|     |_____________|    |___________|      |\n";
+        cout << "|      _____________      _____________       _____________      ___________       |\n";
+        cout << "|     |             |    |             |     |             |    |           |      |\n";
+        cout << "|     | 3. 300      |    | 3. 300      |     | 3. 300      |    | 3. 300    |      |\n";
+        cout << "|     |_____________|    |_____________|     |_____________|    |___________|      |\n";
+        cout << "|      _____________      _____________       _____________      ___________       |\n";
+        cout << "|     |             |    |             |     |             |    |           |      |\n";
+        cout << "|     | 4. 400      |    | 4. 400      |     | 4. 400      |    |  4. 400   |      |\n";
+        cout << "|     |_____________|    |_____________|     |_____________|    |___________| _____|\n";
+        cout << "|                                                                            |      \n";
+        cout << "=============================================================================| :";
+    }
+    if (rowOrColumn == "column") {
+        cout << "====================================================================================\n";
+        cout << "|                                                                                  |\n";
+        cout << "|                  Choose your question(enter a column (1-4) )                     |\n";
+        cout << "|                                                                                  |\n";
+        cout << "|      _____________      _____________       _____________      ___________       |\n";
+        cout << "|     |             |    |             |     |             |    |           |      |\n";
+        cout << "|     | 1. 100      |    | 1. 100      |     | 1. 100      |    | 1. 100    |      |\n";
+        cout << "|     |_____________|    |_____________|     |_____________|    |___________|      |\n";
+        cout << "|      _____________      _____________       _____________      ___________       |\n";
+        cout << "|     |             |    |             |     |             |    |           |      |\n";
+        cout << "|     | 2. 200      |    | 2. 200      |     | 2. 200      |    | 2. 200    |      |\n";
+        cout << "|     |_____________|    |_____________|     |_____________|    |___________|      |\n";
+        cout << "|      _____________      _____________       _____________      ___________       |\n";
+        cout << "|     |             |    |             |     |             |    |           |      |\n";
+        cout << "|     | 3. 300      |    | 3. 300      |     | 3. 300      |    | 3. 300    |      |\n";
+        cout << "|     |_____________|    |_____________|     |_____________|    |___________|      |\n";
+        cout << "|      _____________      _____________       _____________      ___________       |\n";
+        cout << "|     |             |    |             |     |             |    |           |      |\n";
+        cout << "|     | 4. 400      |    | 4. 400      |     | 4. 400      |    |  4. 400   |      |\n";
+        cout << "|     |_____________|    |_____________|     |_____________|    |___________| _____|\n";
+        cout << "|                                                                            |      \n";
+        cout << "=============================================================================| :";
+    }
+}
+

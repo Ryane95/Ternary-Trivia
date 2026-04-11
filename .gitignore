@@ -383,3 +383,5 @@ x64/
 *.lastbuildstate
 *.VC.db
 *.opendb
+/ConsoleApplication1
+*.json
