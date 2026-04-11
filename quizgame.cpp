@@ -136,7 +136,6 @@ int getInput(int min, int max)
 
 void pauseGame()
 {
-    cout << "\nPress ENTER to continue...";
     cin.ignore(1000, '\n');
     cin.get();
 }

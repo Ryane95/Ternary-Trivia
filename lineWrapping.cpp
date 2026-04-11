@@ -60,5 +60,5 @@ int main() {
              "without using any extra libraries. I am sure adding any more "
              "characters to test the limits of this code is fine right ? Who "
              "knows how long the questions or answers will be in the game!";
-  printWrappedBox(q, 25);
+  printWrappedBox("why is everything so loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong?", 25);
 }

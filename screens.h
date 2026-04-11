@@ -21,6 +21,10 @@ void introScreen();
 // the amounts of points it is
 // worth and the answer choices
 void questionScreen(vector<vector<string>>, string, int);
+void menuScreen();
+void questionTable();
+void aTeamsTurn(string);
+void questionSelection(string);
 
 } // namespace screens
 #endif

@@ -12,7 +12,8 @@ Version: 1.5
 #include <cstdlib>
 #include <iomanip>
 #include <string>
-
+#include "quizgame.h"
+#include "screens.h"
 using namespace std;
 struct team
 {
@@ -46,7 +47,7 @@ int main()
 	team team1, team2, team3;
 	team teams[3];
 
-	//Add a file and import it into struct
+	//Add a file and import it inuo struct
 
 	//Trying out structures with array
 	board jepordy[5][5];
@@ -55,6 +56,11 @@ int main()
 	int choice;
 	bool creative = false;
 
+<<<<<<< Updated upstream
+=======
+
+	screens::introScreen();
+>>>>>>> Stashed changes
 		for (int i = 0; i < 3; i++)
 		{
 			cout << "Team " << i + 1 << " is called? ";
@@ -86,7 +92,7 @@ int main()
 
 do
 {
-	displayMenu();
+	screens::menuScreen();
 	choice = getChoice();
 
 	switch (choice)
@@ -200,13 +206,14 @@ void displayMenu()
 int getChoice()
 {
 	int choice = 0;
+	cin >> choice;
 	while (choice < 1 || choice > 5)
 	{
 		while (!(cin >> choice))
 		{
 			cin.clear();
 			cin.ignore(10000, '\n');
-			cout << "Please put a integer value: " << endl;
+			cout << "\nPlease put a integer value: " << endl;
 		}
 	}
 	return choice;
@@ -217,19 +224,33 @@ int answerQuestion(team teams[], board jepordy[5][5])
 	int row, col, teamChoice;
 	int turn = order(); 
 
+<<<<<<< Updated upstream
 	cout << "It is " << teams[turn].name << " turn: " << endl;
 	
 	cout << "Enter a row (0-4): ";
 	row = validation();
 	while (row < 0 || row > 4)
+=======
+	screens::aTeamsTurn(teams[turn].name);
+
+	screens::questionSelection("row");
+	r = validation();
+	while (r < 0 || r > 4)
+>>>>>>> Stashed changes
 	{
 		cout << "Invalid row. Enter a row (0-4): ";
 		row = validation();
 	}
 
+<<<<<<< Updated upstream
 	cout << "Enter a column (0-4): ";
 	col = validation();
 	while (col < 0 || col > 4)
+=======
+	screens::questionSelection("column");
+	c = validation();
+	while (c < 0 || c > 4)
+>>>>>>> Stashed changes
 	{
 		cout << "Invalid column. Enter a column (0-4): ";
 		col = validation();
