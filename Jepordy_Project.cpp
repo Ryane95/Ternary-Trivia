@@ -3,7 +3,7 @@ James Sturdivant
 Group Project
 Date: April 13th
 Description: A game of Jepordy
-Version: 1.4
+Version: 1.5
 ***************************************/
 
 #include <iostream>
@@ -27,9 +27,10 @@ struct board
 	int points;
 	bool used = false;
 };
-int loadPoints(board jepordy[5][5]);
+void loadPoints(board jepordy[5][5]);
 void shuffleTeams(team teams[]);
 int order();
+void populateOwnQuestions(board jepordy[5][5]);
 void displayMenu();
 int getChoice();
 int answerQuestion(team teams[], board jepordy[5][5]);
@@ -44,20 +45,15 @@ int main()
 	//Make sure to give a input validate function. 
 	team team1, team2, team3;
 	team teams[3];
-	teams[0] = team1;
-	teams[1] = team2;
-	teams[2] = team3;
 
 	//Add a file and import it into struct
 
 	//Trying out structures with array
 	board jepordy[5][5];
 	//r for request
-	string r, name;
-	int i,j, choice;
+	string request;
+	int choice;
 	bool creative = false;
-
-
 
 		for (int i = 0; i < 3; i++)
 		{
@@ -65,41 +61,28 @@ int main()
 			getline(cin,teams[i].name);
 		}
 		shuffleTeams(teams);
+		loadPoints(jepordy);
+	
+		//cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
 	cout << "Would you like to populate your own questions, or get a random category and question (y/n)? ";
-	cin >> r;
-	while (r != "y" && r != "Y" && r != "n" && r != "N")
+	while ((cin >> request) && request != "y" && request != "Y" && request != "n" && request != "N")
 	{
 		cout << "Pleases enter y/Y for yes or n/N for no. ";
-		cin >> r;
 	}
-		if (r == "y" || r == "Y")
+		if (request == "y" || request == "Y")
 			creative = true;
-		else if (r == "n" || r == "N")
+		else if (request == "n" || request == "N")
 			creative = false;
 
-	//Found cin >> ws; on https://stackoverflow.com/questions/58705197/cin-ws-vs-cin.ignorenumeric-limitsstreamsizemax-n
-	//clears leftover characters until white space good for getline.
-	cin >> ws; 
-	if (creative == true)
-	{
-		for (i = 0; i < 5; i++ )
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		if (creative == true)
 		{
-			for (j = 0; j < 5; j++)
-			{
-				cout << "Please provide your question.";
-				getline(cin, jepordy[i][j].question);
-				cout << "What is the answer to your question?" ;
-				getline(cin, jepordy[i][j].answer);
-				cout << "Please enter three fake answers." << endl;
-				getline(cin, jepordy[i][j].fake1);
-				getline(cin, jepordy[i][j].fake2); 
-				getline(cin, jepordy[i][j].fake3);
-
-			}
+			populateOwnQuestions(jepordy);
 		}
-		creative = false;
-	}
+
+	
+	
 
 do
 {
@@ -128,18 +111,45 @@ do
 
 return 0;
 }
+void populateOwnQuestions(board jepordy[5][5])
+{
+	bool creative; 
+		for (int i = 0; i < 5; i++)
+		{
+			for (int j = 0; j < 5; j++)
+			{
+				cout << "Please provide your question: ";
+				getline(cin, jepordy[i][j].question);
+				cout << "What is the answer to your question: ";
+				getline(cin, jepordy[i][j].answer);
+				cout << "Please enter three fake answers: " << endl;
+				getline(cin, jepordy[i][j].fake1);
+				getline(cin, jepordy[i][j].fake2);
+				getline(cin, jepordy[i][j].fake3);
 
-//void loadPoints(board Jepordy[5][5]){}
+			}
+		}
+		creative = false;
+}
+
+void loadPoints(board jepordy[5][5])
+{
+	for (int row = 0; row < 5; row++)
+		for (int col = 0; col < 5; col++)
+	{
+		jepordy[row][col].points = (row + 1) * 100;
+	}
+}
 
 void shuffleTeams(team teams[])
 {
 	srand(time(0));
 	for (int i = 0; i < 3; i++)
 	{
-		int r = rand() % 3;
+		int j = rand() % 3;
 		team temp = teams[i];
-		teams[i] = teams[r];
-		teams[r] = temp;
+		teams[i] = teams[j];
+		teams[j] = temp;
 	}
 }
 int order()
@@ -165,6 +175,18 @@ int validation()
 void displayMenu()
 {
 	// Display menu of choices
+	cout << endl;
+	cout << endl;
+	cout << endl;
+	cout << endl;
+	cout << endl;
+	cout << endl;
+	cout << endl;
+	cout << endl;
+	cout << endl;
+	cout << endl;
+	cout << endl;
+	cout << endl;
 	cout << "\n\n\n\t\tTernary Trivia" << endl << endl;
 	cout << "\n\t1.  Answer a question";
 	cout << "\n\t2.  Check current points";
@@ -192,38 +214,38 @@ int getChoice()
 
 int answerQuestion(team teams[], board jepordy[5][5])
 {
-	int r, c, teamChoice;
+	int row, col, teamChoice;
 	int turn = order(); 
 
 	cout << "It is " << teams[turn].name << " turn: " << endl;
 	
 	cout << "Enter a row (0-4): ";
-	r = validation();
-	while (r < 0 || r > 4)
+	row = validation();
+	while (row < 0 || row > 4)
 	{
 		cout << "Invalid row. Enter a row (0-4): ";
-		r = validation();
+		row = validation();
 	}
 
 	cout << "Enter a column (0-4): ";
-	c = validation();
-	while (c < 0 || c > 4)
+	col = validation();
+	while (col < 0 || col > 4)
 	{
 		cout << "Invalid column. Enter a column (0-4): ";
-		c = validation();
+		col = validation();
 	}
 
-	if (jepordy[r][c].used)
+	if (jepordy[row][col].used)
 	{
 		cout << "That question has already been used.\n";
 		return 0;
 	}
 	else
 	{
-		jepordy[r][c].used = true;
+		jepordy[row][col].used = true;
 	}
 
-	string prompts[4] = { jepordy[r][c].answer,jepordy[r][c].fake1 ,jepordy[r][c].fake2 ,jepordy[r][c].fake3};
+	string prompts[4] = { jepordy[row][col].answer,jepordy[row][col].fake1 ,jepordy[row][col].fake2 ,jepordy[row][col].fake3 };
 
 	int multipleChoice[4] = {0,1,2,3};
 
@@ -234,12 +256,14 @@ int answerQuestion(team teams[], board jepordy[5][5])
 		multipleChoice[i] = multipleChoice[j];
 		multipleChoice[j] = temp;
 	}
+	
+	cout << jepordy[row][col].question << endl << endl;
 
 	for (int i = 0; i < 4; i++)
 	{
 		cout << i + 1 << ") " << prompts[multipleChoice[i]] << endl;
 	}
-
+	
 	cout << "Choose your answer (1-4): ";
 	int choice = validation();
 	while (choice < 1 || choice > 4)
@@ -248,15 +272,15 @@ int answerQuestion(team teams[], board jepordy[5][5])
 		choice = validation();
 	}
 
-	if (prompts[multipleChoice[choice - 1]] == jepordy[r][c].answer)
+	if (prompts[multipleChoice[choice - 1]] == jepordy[row][col].answer)
 	{
-		cout << "The answer is correct. " << jepordy[r][c].points << " points.\n";
-		teams[turn].points += jepordy[r][c].points;
+		cout << "The answer is correct. " << jepordy[row][col].points << " points.\n";
+		teams[turn].points += jepordy[row][col].points;
 	}
 	else
 	{
-		cout << "The answer is Incorrect. " << jepordy[r][c].points << " points.\n";
-		teams[turn].points -= jepordy[r][c].points;
+		cout << "The answer is Incorrect. " << jepordy[row][col].points << " points.\n";
+		teams[turn].points -= jepordy[row][col].points;
 	}
 	return 0;
 
@@ -275,13 +299,32 @@ void showScore(team teams[])
 
 void restartGame(team teams[], board jepordy[5][5])
 {
+	bool creative = false; 
+	string request;
+
 	for (int i = 0; i < 3; i++)
 	{
 		teams[i].points = 0;
 	}
-	for (int r = 0; r < 5; r++)
-		for (int c = 0; c < 5; c++)
-			jepordy[r][c].used = false;
+	for (int row = 0; row < 5; row++)
+		for (int col = 0; col < 5; col++)
+			jepordy[row][col].used = false;
+
+	cout << "Would you like to populate your own questions, or get a random category and question (y/n)? ";
+	while ((cin >> request) && request != "y" && request != "Y" && request != "n" && request != "N")
+	{
+		cout << "Pleases enter y/Y for yes or n/N for no. ";
+	}
+	if (request == "y" || request == "Y")
+		creative = true;
+	else if (request == "n" || request == "N")
+		creative = false;
+
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	if (creative == true)
+	{
+		populateOwnQuestions(jepordy);
+	}
 
 }
 
