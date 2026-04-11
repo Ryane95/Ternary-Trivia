@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/brocc/OneDrive/Documents/GitHub/Ternary-Trivia",
-      "program": "${workspaceFolder}/quizgame.exe",
+      "cwd": "C:/Users/brocc/OneDrive/Desktop/The real ternary trivia/Ternary-Trivia",
+      "program": "${workspaceFolder}.exe",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
