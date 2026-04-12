@@ -55,10 +55,6 @@ cout << "                            (Press Enter to continue)                  
 cout << "===================================================================================\n";
 pauseGame();
 }
-void screens::questionScreen(vector<vector<string>> questions, string category,
-                             int index) {
-
-}
 void screens::menuScreen() {
     cout << "===================================================================================\n";
     cout << "|                                                                                  |\n";
@@ -147,4 +143,38 @@ void screens::questionSelection(string rowOrColumn) {
         cout << "=============================================================================| :";
     }
 }
-
+void screens::questionScreen(string question, string multipleChoice[], int row) {
+    row += 1;
+    string prompt[4];
+    for (int i = 0; i < 4; i++) {
+        prompt[i] == multipleChoice[i];
+    }
+    int MultipleChoice[4] = { 0,1,2,3 };
+    for (int i = 0; i < 4; i++)
+    {
+        int j = rand() % 4;
+        int temp = MultipleChoice[i];
+        MultipleChoice[i] = MultipleChoice[j];
+        MultipleChoice[j] = temp;
+    }
+    for (int i = 0; i < 4; i++)
+    {
+        prompt[i] = to_string(i + 1) + ") "+ multipleChoice[MultipleChoice[i]];
+    }
+    cout << "===================================================================================\n";
+    cout << "|                                                                                  |\n";
+    cout << "|                                                                                  |\n";
+    cout << "|                           Question"<< to_string(row)<<" : ("<< to_string(row)<<"00 points)                               | \n";
+    cout << "|                                                                                  |\n";
+    cout << "|                                                                                  |\n";
+    printWrappedString("|                 ", question, 53, "            |");
+    cout << "|                                                                                  |\n";
+    cout << "|                                                                                  |\n";
+    for (int counter = 0; counter < 4; counter++) {
+        printWrappedString("|               ", prompt[counter], 13, "                                                      |\n");
+    }
+    cout << "|                                                                                  |\n";
+    cout << "|                                                                         _________|\n";
+    cout << "|                                                                         |        \n";
+    cout << "==========================================================================| :";
+}

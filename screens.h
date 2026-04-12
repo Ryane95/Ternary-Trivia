@@ -20,7 +20,7 @@ void introScreen();
 // A function that displays the question as well as it's category (passed in),
 // the amounts of points it is
 // worth and the answer choices
-void questionScreen(vector<vector<string>>, string, int);
+void questionScreen(string,string[],int);
 void menuScreen();
 void questionTable();
 void aTeamsTurn(string);
