@@ -22,6 +22,7 @@ void introScreen();
 // worth and the answer choices
 void questionScreen(string,string[],int);
 void menuScreen();
+void menuScreen(string);
 void questionTable();
 void aTeamsTurn(string);
 void questionSelection(string);

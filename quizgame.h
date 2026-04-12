@@ -31,7 +31,7 @@ struct Question
     int correctIndex;
 };
 
-void readFile(string filename, board jepordy[][5]);
+string readFile(string filename, board jepordy[][5]);
 vector<string> splitLine(string line);
 int getInput(int min, int max);
 void pauseGame();

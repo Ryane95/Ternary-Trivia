@@ -13,6 +13,7 @@ Version: 1.6
 #include <iomanip>
 #include <string>
 #include "quizgame.h"
+#include "screens.h"
 
 using namespace std;
 
@@ -30,7 +31,7 @@ int validation();
 
 int main()
 {
-    cout << "PROGRAM STARTED\n";
+    screens::introScreen();
     srand(time(0));
 
     team teams[3];
@@ -55,6 +56,7 @@ int main()
         creative = true;
 
     cin.ignore(1000, '\n');
+    string category = " ";
 
     if (creative)
     {
@@ -62,14 +64,17 @@ int main()
     }
     else
     {
-        readFile("Math.txt", jepordy);
+        category = readFile("Math.txt", jepordy);
     }
 
     int choice;
 
     do
     {
-        displayMenu();
+        if (category == " ")
+            screens::menuScreen();
+        else
+            screens::menuScreen(category);
         choice = getChoice();
 
         switch (choice)
@@ -198,9 +203,9 @@ int answerQuestion(team teams[], board jepordy[5][5])
     int row, col, teamChoice;
     int turn = order();
 
-    cout << "It is " << teams[turn].name << " turn: " << endl;
+    screens::aTeamsTurn(teams[turn].name);
 
-    cout << "Enter a row (0-4): ";
+    screens::questionSelection("row");
     row = validation();
     while (row < 0 || row > 4)
     {
@@ -208,7 +213,7 @@ int answerQuestion(team teams[], board jepordy[5][5])
         row = validation();
     }
 
-    cout << "Enter a column (0-4): ";
+    screens::questionSelection("column");
     col = validation();
     while (col < 0 || col > 4)
     {
@@ -238,15 +243,15 @@ int answerQuestion(team teams[], board jepordy[5][5])
         multipleChoice[j] = temp;
     }
 
-    cout << jepordy[row][col].question << endl
-         << endl;
+    //cout << jepordy[row][col].question << endl
+    //     << endl;
 
-    for (int i = 0; i < 4; i++)
-    {
-        cout << i + 1 << ") " << prompts[multipleChoice[i]] << endl;
-    }
-
-    cout << "Choose your answer (1-4): ";
+    //for (int i = 0; i < 4; i++)
+    //{
+    //    cout << i + 1 << ") " << prompts[multipleChoice[i]] << endl;
+    //}
+    screens::questionScreen(jepordy[row][col].question, prompts, row);
+    //cout << "Choose your answer (1-4): ";
     int choice = validation();
     while (choice < 1 || choice > 4)
     {

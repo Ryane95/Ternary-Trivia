@@ -31,14 +31,14 @@ vector<string> splitLine(string line)
     return parts;
 }
 
-void readFile(string filename, board jepordy[][5])
+string readFile(string filename, board jepordy[][5])
 {
     ifstream file(filename);
 
     if (!file)
     {
         cout << "Error opening file: " << filename << endl;
-        return;
+        return " ";
     }
 
     string category;
@@ -76,6 +76,7 @@ void readFile(string filename, board jepordy[][5])
     }
 
     file.close();
+    return category;
 }
 
 int getInput(int min, int max)

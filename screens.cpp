@@ -75,6 +75,27 @@ void screens::menuScreen() {
     cout << "|                                                                         |         \n";
     cout << "==========================================================================| :";
 }
+void screens::menuScreen(string category) {
+    cout << "===================================================================================\n";
+    printWrappedString("|                    category: ", category, 14, "                                       |\n");
+    cout << "|                                                                                  |\n";
+    cout << "|                             Ternary Trivia                                       |\n";
+    cout << "|                                                                                  |\n";
+    cout << "|                       What would you like to do?                                 |\n";
+    cout << "|                                                                                  |\n";
+    cout << "|                                                                                  |\n";
+    cout << "|               1.Answer a question                                                |\n";
+    cout << "|               2.Check current points                                             |\n";
+    cout << "|               3.Restart Game                                                     |\n";
+    cout << "|               4.Change current points                                            |\n";
+    cout << "|               5.Exit the program                                                 |\n";
+    for (int count = 0; count < 2; count++) {
+        cout << "|                                                                                  |\n";
+    }
+    cout << "|                                                                         _________|\n";
+    cout << "|                                                                         |         \n";
+    cout << "==========================================================================| :";
+}
 void screens::questionTable() {
 
 }
