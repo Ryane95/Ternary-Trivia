@@ -57,8 +57,7 @@ int main()
 	int i,j, choice;
 	bool creative = false;
 
-
-
+	screens::introScreen();
 		for (int i = 0; i < 3; i++)
 		{
 			cout << "Team " << i + 1 << " is called? ";
@@ -195,9 +194,9 @@ int answerQuestion(team teams[], board jepordy[5][5])
 	int r, c, teamChoice;
 	int turn = order(); 
 
-	cout << "It is " << teams[turn].name << " turn: " << endl;
-	
-	cout << "Enter a row (0-4): ";
+	screens::aTeamsTurn(teams[turn].name);
+
+	screens::questionSelection("row");
 	r = validation();
 	while (r < 0 || r > 4)
 	{
@@ -205,7 +204,7 @@ int answerQuestion(team teams[], board jepordy[5][5])
 		r = validation();
 	}
 
-	cout << "Enter a column (0-4): ";
+	screens::questionSelection("column");
 	c = validation();
 	while (c < 0 || c > 4)
 	{
@@ -234,21 +233,23 @@ int answerQuestion(team teams[], board jepordy[5][5])
 		multipleChoice[i] = multipleChoice[j];
 		multipleChoice[j] = temp;
 	}
+	
+	//cout << jepordy[row][col].question << endl << endl;
 
-	for (int i = 0; i < 4; i++)
-	{
-		cout << i + 1 << ") " << prompts[multipleChoice[i]] << endl;
-	}
-
-	cout << "Choose your answer (1-4): ";
+	//for (int i = 0; i < 4; i++)
+	//{
+	//	cout << i + 1 << ") " << prompts[multipleChoice[i]] << endl;
+	//}
+	screens::questionScreen(jepordy[row][col].question, prompts, row);
+	
+	//cout << "Choose your answer (1-4): ";
 	int choice = validation();
 	while (choice < 1 || choice > 4)
 	{
 		cout << "Invalid choice. Choose 1-4: ";
 		choice = validation();
 	}
-
-	if (prompts[multipleChoice[choice - 1]] == jepordy[r][c].answer)
+	if (prompts[multipleChoice[choice - 1]] == jepordy[row][col].answer)
 	{
 		cout << "The answer is correct. " << jepordy[r][c].points << " points.\n";
 		teams[turn].points += jepordy[r][c].points;
