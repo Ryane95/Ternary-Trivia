@@ -1,6 +1,4 @@
 #include "quizgame.h"
-#include <iostream>
-#include <fstream>
 #include <cstdlib>
 #include <ctime>
 
@@ -33,7 +31,7 @@ vector<string> splitLine(string line)
     return parts;
 }
 
-void readFile(string filename)
+void readFile(string filename, board jepordy[][5])
 {
     ifstream file(filename);
 
@@ -48,61 +46,33 @@ void readFile(string filename)
 
     cout << "\nCategory: " << category << endl;
 
-    vector<Question> questions;
-
     string line;
+    int row = 0;
+    int col = 0;
 
-    while (getline(file, line))
+    while (getline(file, line) && row < 5)
     {
         vector<string> parts = splitLine(line);
 
-        if (parts.size() >= 7)
+        if (parts.size() >= 6)
         {
-            Question q;
+            jepordy[row][col].points = (row + 1) * 100;
+            jepordy[row][col].question = parts[1];
 
-            q.value = stoi(parts[0]);
-            q.text = parts[1];
+            jepordy[row][col].fake1 = parts[2];
+            jepordy[row][col].fake2 = parts[3];
+            jepordy[row][col].fake3 = parts[4];
+            jepordy[row][col].answer = parts[5];
 
-            for (int i = 2; i <= 5; i++)
+            jepordy[row][col].used = false;
+
+            col++;
+            if (col == 5)
             {
-                q.answers.push_back(parts[i]);
+                col = 0;
+                row++;
             }
-
-            for (int i = 0; i < 4; i++)
-            {
-                if (parts[6] == q.answers[i])
-                {
-                    q.correctIndex = i;
-                }
-            }
-
-            questions.push_back(q);
         }
-    }
-
-    for (int i = 0; i < questions.size(); i++)
-    {
-        cout << "\nValue: " << questions[i].value << endl;
-        cout << "Question: " << questions[i].text << endl;
-
-        for (int j = 0; j < questions[i].answers.size(); j++)
-        {
-            cout << j + 1 << ") " << questions[i].answers[j] << endl;
-        }
-
-        int answer = getInput(1, 4) - 1;
-
-        if (answer == questions[i].correctIndex)
-        {
-            cout << "Correct!\n";
-        }
-        else
-        {
-            cout << "Incorrect. Correct answer: "
-                 << questions[i].answers[questions[i].correctIndex] << endl;
-        }
-
-        pauseGame();
     }
 
     file.close();
@@ -114,7 +84,6 @@ int getInput(int min, int max)
 
     while (true)
     {
-        cout << "Enter a number (" << min << "-" << max << "): ";
         cin >> choice;
 
         if (cin.fail())
