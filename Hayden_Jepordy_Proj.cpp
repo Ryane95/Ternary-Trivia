@@ -14,6 +14,7 @@ Version: 1.6
 #include <string>
 #include "quizgame.h"
 #include "screens.h"
+#include "editor2.h"
 
 using namespace std;
 
@@ -28,14 +29,15 @@ void showScore(team teams[]);
 void restartGame(team teams[], board jepordy[5][5]);
 void changePoints(team teams[]);
 int validation();
-
+string chooseRandSubject();
+board jepordy[5][5];
 int main()
 {
     screens::introScreen();
     srand(time(0));
 
     team teams[3];
-    board jepordy[5][5];
+    
 
     string request;
     bool creative = false;
@@ -49,7 +51,7 @@ int main()
     shuffleTeams(teams);
     loadPoints(jepordy);
 
-    cout << "Use custom questions? (y/n): ";
+    cout << "Use the editor to make questions? (y/n): ";
     cin >> request;
 
     if (request == "y" || request == "Y")
@@ -60,11 +62,12 @@ int main()
 
     if (creative)
     {
-        populateOwnQuestions(jepordy);
+        fileEditor();
+        category = chooseRandSubject();
     }
     else
     {
-        category = readFile("Math.txt", jepordy);
+        category = chooseRandSubject();
     }
 
     int choice;
@@ -326,4 +329,25 @@ void changePoints(team teams[])
     cout << "What is the new score?";
     score = validation();
     teams[piece - 1].points = score;
+}
+string chooseRandSubject() {
+    ifstream file("Subjects.txt");
+    srand(time(0));
+    vector<string> subfiles;
+
+    if (!file)
+    {
+        cout << "Error opening file: " << "Subjects.txt" << endl;
+        return " ";
+    }
+    string line;
+    while (getline(file, line))
+    {
+        subfiles.push_back(line);
+    }
+    file.close();
+    int randomInt = rand() % subfiles.size();
+    string category = readFile(subfiles[randomInt], jepordy);
+
+    return category;
 }
