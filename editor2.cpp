@@ -14,7 +14,7 @@ Version: 0
 #include <string>
 #include <vector>
 #include "quizgame.h"
-#include "Updated Project folder/editor2.h"
+
 
 using namespace std;
     vector<string> showFile(string filename)
