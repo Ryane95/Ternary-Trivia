@@ -222,6 +222,7 @@ _pkginfo.txt
 *.appx
 *.appxbundle
 *.appxupload
+*.json
 
 # Visual Studio cache files
 # files ending in .cache can be ignored
@@ -382,3 +383,5 @@ x64/
 *.lastbuildstate
 *.VC.db
 *.opendb
+/ConsoleApplication1
+*.json
