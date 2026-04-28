@@ -14,7 +14,6 @@ Version: 1.6
 #include <fstream>
 #include <iostream>
 #include <string>
-
 using namespace std;
 
 void loadPoints(board jepordy[5][5]);
@@ -93,7 +92,6 @@ int main() {
 }
 
 void populateOwnQuestions(board jepordy[5][5]) {
-  bool creative;
   for (int i = 0; i < 5; i++) {
     for (int j = 0; j < 5; j++) {
       cout << "Please provide your question: ";
@@ -106,7 +104,6 @@ void populateOwnQuestions(board jepordy[5][5]) {
       getline(cin, jepordy[i][j].fake3);
     }
   }
-  creative = false;
 }
 
 void loadPoints(board jepordy[5][5]) {
@@ -178,7 +175,7 @@ int getChoice() {
 }
 
 int answerQuestion(team teams[], board jepordy[5][5]) {
-  int row, col, teamChoice;
+  int row, col;
   int turn = order();
 
   screens::aTeamsTurn(teams[turn].name);

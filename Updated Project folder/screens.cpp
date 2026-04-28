@@ -271,9 +271,6 @@ void screens::questionScreen(string question, string multipleChoice[],
                              int row) {
   row += 1;
   string prompt[4];
-  for (int i = 0; i < 4; i++) {
-    prompt[i] = multipleChoice[i];
-  }
   int MultipleChoice[4] = {0, 1, 2, 3};
   for (int i = 0; i < 4; i++) {
     int j = rand() % 4;
